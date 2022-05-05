@@ -1,7 +1,7 @@
 import { BadRequestException, Body, Controller, Get, Logger } from '@nestjs/common';
 import { BillResponse, Product } from './bill.interface';
 import { MessagePattern } from '@nestjs/microservices';
-import { AppService, BillService } from './bill.service';
+import { BillService } from './bill.service';
 
 @Controller()
 export class BillController {

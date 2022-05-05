@@ -2,13 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { BillResponse, Product } from './bill.interface';
 
 @Injectable()
-export class AppService {
-  getHello(): string {
-    return 'Hello World!';
-  }
-}
-
-@Injectable()
 export class BillService {
   public calculateTotal(products: Product[]): BillResponse {
     let result: BillResponse = {
@@ -17,7 +10,7 @@ export class BillService {
     };
 
     if (products.length === 0) {
-      result.errorMessage = 'No products added to the basket';
+      result.errorMessage = 'No products were added to the basket';
     }
     else {
       for (const p in products) {
