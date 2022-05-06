@@ -7,4 +7,4 @@ import { BillService } from './bill/bill.service';
   controllers: [BillController],
   providers: [BillService],
 })
-export class ApiModule {}
+export class MicroServiceModule {}

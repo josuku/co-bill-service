@@ -8,7 +8,7 @@ export class BillController {
   constructor(private readonly billService: BillService) {}
 
   @MessagePattern('calculateTotal')
-  public async createSentOrder(@Body() products: Product[]): Promise<BillResponse> {
+  public async calculateTotal(@Body() products: Product[]): Promise<BillResponse> {
     Logger.log(products)
     if (!this.billService.checkProductsAreValid(products)) {
       Logger.error('Bad Request', products);
