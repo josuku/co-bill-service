@@ -9,7 +9,6 @@ export class BillController {
 
   @MessagePattern('calculateTotal')
   public async calculateTotal(@Body() products: Product[]): Promise<BillResponse> {
-    Logger.log(products)
     if (!this.billService.checkProductsAreValid(products)) {
       Logger.error('Bad Request', products);
       return {
