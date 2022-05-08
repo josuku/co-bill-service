@@ -12,7 +12,10 @@ export class BillController {
     Logger.log(products)
     if (!this.billService.checkProductsAreValid(products)) {
       Logger.error('Bad Request', products);
-      throw new BadRequestException();
+      return {
+        total: 0,
+        errorMessage: 'Bad Request'
+      };
     }
     return this.billService.calculateTotal(products);
   }

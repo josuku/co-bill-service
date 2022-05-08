@@ -22,7 +22,7 @@ export class BillService {
 
   public checkProductsAreValid(products: Product[]): boolean {
     for (const p in products) {
-      if (!products[p].id || !products[p].cost || !products[p].quantity) {
+      if (!products[p].productId || !products[p].cost || !products[p].quantity) {
         return false;
       }
     }
